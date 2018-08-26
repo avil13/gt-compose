@@ -22,4 +22,7 @@ echo 'eval "$(rbenv init -)"' >> .bashrc
 
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
+
+ruby -v
+
 gem update --system

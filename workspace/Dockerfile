@@ -30,26 +30,26 @@ ENV PATH ${PATH}
 
 
 # USER root
-COPY scripts /root/scripts/
+# COPY scripts /root/scripts/
 
-RUN apt-get update -yqq && apt-get install -yqq \
-    curl \
-    git \
-    build-essential \
-    bzip2 \
-    ca-certificates \
-    default-jre \
-    libpq-dev \
-    libreadline-dev \
-    libssl-dev \
-    wkhtmltopdf \
-    zlib1g-dev 
-# scripts
-RUN /root/scripts/install_ruby.sh && \ 
-    /root/scripts/test_installed_versions.sh && \
-    rm -rf /root/scripts && \
-    rm -rf /tmp/* && \
-    rm -rf /var/lib/apt/lists/*
+# RUN apt-get update -yqq && apt-get install -yqq \
+#     curl \
+#     git \
+#     build-essential \
+#     bzip2 \
+#     ca-certificates \
+#     default-jre \
+#     libpq-dev \
+#     libreadline-dev \
+#     libssl-dev \
+#     wkhtmltopdf \
+#     zlib1g-dev 
+# # scripts
+# RUN /root/scripts/install_ruby.sh \ 
+#     && /root/scripts/test_installed_versions.sh \
+#     # && rm -rf /root/scripts \
+#     # && rm -rf /tmp/* \
+#     # && rm -rf /var/lib/apt/lists/*
 
 
-CMD ["bundle", "exec", "./server", "start"]
+# # CMD ["bundle", "exec", "./server", "start"]
